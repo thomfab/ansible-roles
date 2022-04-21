@@ -1,0 +1,33 @@
+---
+# add zfs tools
+
+- name: install zfs package
+  become: yes
+  apt:
+    name:
+      - zfsutils-linux
+    state: present
+
+- name: add scripts
+  become: yes
+  file:
+    path: "{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - zfs_nbpools.sh
+    - zfs_healthcheck.sh
+    - zfs_scrub.sh
+
+- name: add zfs scrub to crontab
+  become: yes
+  cron:
+    name: "ZFS Scrub"
+    user: root
+    hour: {{ zfs_scrub_hour }}
+    minute: {{ zfs_scrub_minute }}
+    weekday: {{ zfs_scrub_weekday }}
+    job: /usr/local/bin/zfs_scrub.sh
+    state: present

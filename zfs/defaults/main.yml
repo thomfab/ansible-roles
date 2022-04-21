@@ -1,0 +1,7 @@
+---
+
+# define the time when the ZFS scrub script is launched
+zfs_scrub_hour: "19"
+zfs_scrub_minute: "0"
+# define the weekday for ZFS scrub script (see crontab for possible values)
+zfs_scrub_weekday: "1"
