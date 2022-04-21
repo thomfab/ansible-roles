@@ -28,7 +28,7 @@ Example:
   ---
   - hosts: servers
     roles:
-      - role: thomfab.ansible-bashalias
+      - role: bashalias
         bashalias_aliases:
           - { alias: "ll", command: "ls -hl" }
           - { alias: "la", command: "ls -hal" }
