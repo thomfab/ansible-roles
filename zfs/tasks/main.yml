@@ -26,8 +26,8 @@
   cron:
     name: "ZFS Scrub"
     user: root
-    hour: {{ zfs_scrub_hour }}
-    minute: {{ zfs_scrub_minute }}
-    weekday: {{ zfs_scrub_weekday }}
+    hour: "{{ zfs_scrub_hour }}"
+    minute: "{{ zfs_scrub_minute }}"
+    weekday: "{{ zfs_scrub_weekday }}"
     job: /usr/local/bin/zfs_scrub.sh
     state: present
