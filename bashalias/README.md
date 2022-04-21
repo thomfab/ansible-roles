@@ -1,10 +1,9 @@
-Bash aliases
-============
+# Bash aliases
 
 This role creates bash aliases that are available for all users.
 
-Role Variables
---------------
+## Role Variables
+
 
 
 One variable can be set: `bashalias_aliases`
@@ -19,8 +18,7 @@ bashalias_aliases:
   - { alias: "la", command: "ls -hal" }
 ```
 
-Example Playbook
-----------------
+## Example Playbook
 
 Example:
 
@@ -34,7 +32,6 @@ Example:
           - { alias: "la", command: "ls -hal" }
 ```
 
-License
--------
+## License
 
 BSD
